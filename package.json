@@ -1,0 +1,27 @@
+{
+  "name": "pi-caveman",
+  "version": "1.0.0",
+  "description": "pi extension: compressed caveman communication style with persistence (lite/full/ultra/wenyan)",
+  "keywords": ["pi-package", "pi-extension", "caveman", "compression", "tokens"],
+  "license": "MIT",
+  "author": "David Raistrick",
+  "homepage": "https://github.com/keen99/pi-caveman",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keen99/pi-caveman.git"
+  },
+  "type": "module",
+  "main": "./index.js",
+  "scripts": {
+    "clean": "echo 'nothing to clean'",
+    "build": "echo 'nothing to build'",
+    "check": "echo 'nothing to check'"
+  },
+  "pi": {
+    "extensions": ["./index.js"],
+    "skills": ["./skills"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
