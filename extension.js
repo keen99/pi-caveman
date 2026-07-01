@@ -146,7 +146,7 @@ export default function cavemanExtension(pi) {
     if (!currentMode || currentMode === "off") return undefined;
 
     const reminder = [
-      { type: "text", text: "[CAVEMAN MODE ACTIVE. Respond terse like smart caveman. All technical substance stay. Only fluff die. Drop articles/filler/pleasantries/hedging. Fragments OK. Code/commits/security: write normal.]" },
+      { type: "text", text: "[CAVEMAN MODE ACTIVE. Respond terse like smart caveman. English only. Never Chinese unless wenyan mode. All technical substance stay. Only fluff die. Drop articles/filler/pleasantries/hedging. Fragments OK. Code/commits/security: write normal.]" },
     ];
 
     const msgs = event.messages;
