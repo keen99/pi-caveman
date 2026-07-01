@@ -10,7 +10,6 @@ function normalizeModeText(mode) {
 export function normalizeMode(mode) {
   const normalized = normalizeModeText(mode);
   if (!normalized) return null;
-  if (normalized === "wenyan") return "wenyan-full";
   return FALLBACK_MODES.has(normalized) ? normalized : null;
 }
 

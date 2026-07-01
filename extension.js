@@ -43,7 +43,7 @@ export default function cavemanExtension(pi) {
 
       if (parsed.type === "status") {
         if (ctx?.ui?.notify) {
-          ctx.ui.notify(`Caveman: current ${currentMode} • default ${configuredDefaultMode}`, "info");
+          ctx.ui.notify(`Caveman: current ${currentMode} - default ${configuredDefaultMode}`, "info");
         }
         return;
       }
@@ -125,7 +125,7 @@ export default function cavemanExtension(pi) {
     currentMode = resolveSessionMode(entries, configuredDefaultMode);
   });
 
-  // System prompt injection — full rules from SKILL.md
+  // System prompt injection --- full rules from SKILL.md
   pi.on("before_agent_start", async (event) => {
     if (!currentMode || currentMode === "off") {
       return;
@@ -137,7 +137,7 @@ export default function cavemanExtension(pi) {
   });
 
   // Per-turn reinforcement: pre-flight check right before every LLM call.
-  // This is critical — the system prompt rules get ignored mid-session.
+  // This is critical --- the system prompt rules get ignored mid-session.
   // The context hook fires before every LLM turn, so the model sees this
   // check list RIGHT BEFORE generating. It can't skip it.
   // IMPORTANT: messages returned from the context hook are HIDDEN from the
@@ -146,7 +146,7 @@ export default function cavemanExtension(pi) {
     if (!currentMode || currentMode === "off") return undefined;
 
     const reminder = [
-      { type: "text", text: "[CAVEMAN MODE ACTIVE. Respond terse like smart caveman. English only. Never Chinese unless wenyan mode. All technical substance stay. Only fluff die. Drop articles/filler/pleasantries/hedging. Fragments OK. Code/commits/security: write normal.]" },
+      { type: "text", text: "[CAVEMAN MODE ACTIVE. Respond terse like smart caveman. English only. All technical substance stay. Only fluff die. Drop articles/filler/pleasantries/hedging. Fragments OK. Code/commits/security: write normal.]" },
     ];
 
     const msgs = event.messages;

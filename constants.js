@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 export const EXTENSION_DIR = dirname(fileURLToPath(import.meta.url));
 // DEFAULT_MODE controls whether caveman is ON at session start.
 // "full" = caveman active by default every session (no /caveman needed).
-// This is why caveman appears "without activating" it — it's never off.
+// This is why caveman appears "without activating" it --- it's never off.
 // Set to "off" to require explicit /caveman to enable.
 export const DEFAULT_MODE = "full";
 export const FALLBACK_MODES = new Set([
@@ -12,10 +12,6 @@ export const FALLBACK_MODES = new Set([
   "lite",
   "full",
   "ultra",
-  "wenyan",
-  "wenyan-lite",
-  "wenyan-full",
-  "wenyan-ultra",
 ]);
 export const CONFIG_MODES = new Set([...FALLBACK_MODES, "commit", "review", "compress"]);
 export const INDEPENDENT_MODES = new Set(["commit", "review", "compress"]);
