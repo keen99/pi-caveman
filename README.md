@@ -1,5 +1,8 @@
 # pi-caveman
 
+![release-watch](https://github.com/keen99/pi-caveman/actions/workflows/release-watch.yml/badge.svg)
+[![pi tested](https://img.shields.io/github/v/release/keen99/pi-caveman?label=pi%20tested%200.75.0%20%E2%86%92)](https://github.com/keen99/pi-caveman/releases)
+
 Compressed caveman communication style for [pi](https://pi.dev), with persistence. Model responds terse — drops articles, filler, pleasantries, hedging. Keeps full technical accuracy. Code/commits/PRs written normal.
 
 Adapted from [vedang's PR #162](https://github.com/JuliusBrussee/caveman/pull/162) on JuliusBrussee/caveman, with an added `context` hook for per-turn reinforcement so the style doesn't drift mid-session.
@@ -7,6 +10,10 @@ Adapted from [vedang's PR #162](https://github.com/JuliusBrussee/caveman/pull/16
 ## Install
 
 ```bash
+# ssh
+pi install git:git@github.com:keen99/pi-caveman
+
+# https
 pi install git:github.com/keen99/pi-caveman
 ```
 

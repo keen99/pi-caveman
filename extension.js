@@ -123,6 +123,16 @@ export default function cavemanExtension(pi) {
     const entries = ctx?.sessionManager?.getBranch?.() || ctx?.sessionManager?.getEntries?.() || [];
     configuredDefaultMode = readDefaultMode();
     currentMode = resolveSessionMode(entries, configuredDefaultMode);
+
+    if (process.env.CAVEMAN_DEBUG === "1") {
+      try {
+        const { writeFileSync } = await import("node:fs");
+        const { join } = await import("node:path");
+        const { homedir } = await import("node:os");
+        const agentDir = process.env.PI_CODING_AGENT_DIR || join(homedir(), ".pi", "agent");
+        writeFileSync(join(agentDir, "caveman-loaded.json"), JSON.stringify({ loaded: true, mode: currentMode, default: configuredDefaultMode }) + "\n");
+      } catch { /* debug marker best-effort */ }
+    }
   });
 
   // System prompt injection --- full rules from SKILL.md
